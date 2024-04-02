@@ -14,10 +14,15 @@ class Moderator(User):
         return{
             'id': self.id,
             'username': self.username,
+            'competitions': [comp.name for comp in self.competitions]
         }
 
     def toDict(self):
         return{
             'ID': self.id,
             'Username': self.username,
+            'Competitions': [comp.name for comp in self.competitions]
         }
+
+    def __repr__(self):
+        return f'{self.username}'
